@@ -52,7 +52,7 @@
     }
 
     .loader {
-        animation: load 4s 3s backwards;
+        animation: load 2s 3s backwards;
     }
 
     .image-wrapper {
