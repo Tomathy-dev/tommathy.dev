@@ -17,7 +17,7 @@
     onMount(() => {
         setTimeout(() => {
             pressableKeys = true
-        }, 7000)
+        }, 4000)
     })
 </script>
 
@@ -48,15 +48,15 @@
     }
 
     .loader-border{
-        animation: fadeIn 2s 1s backwards;
+        animation: fadeIn 1s 2s backwards;
     }
 
     .loader {
-        animation: load 2s 3s backwards;
+        animation: load 1500ms 2s backwards;
     }
 
     .image-wrapper {
-        animation: fadeIn 2s 1s backwards, jerkwhole 5s 3s infinite;
+        animation: fadeIn 1500ms 1s backwards, jerkwhole 5s 3s infinite;
     }
 
     .image-wrapper img:nth-child(2){
