@@ -11,7 +11,7 @@ type Rune = {
 }
 
 const possibleRunes: string = "Dqwertyuiopasdfghjklzxcvbnm\"\',.;:?!"
-const number_of_runes = 15
+const number_of_runes = 30
 const runes: Rune[] = $state([])
 const colors: string[] = ["purple", "red", "white", "black", "green", "turquoise", "yellow", "orange", "springgreen", "deeppink", "deepskyblue"]
 
@@ -33,7 +33,7 @@ const animateRune: Action = (node) => {
         bottom: "120%",
     }], {
         duration: (Math.random() * 15000) + 5000,
-        delay: Math.random() * 10,
+        delay: Math.random() * 20,
         easing: "linear",
         iterations: Infinity,
         fill: "backwards"
