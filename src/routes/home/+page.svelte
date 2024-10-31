@@ -1,8 +1,12 @@
 <script lang="ts">
-	import Runes from '$lib/Runes.svelte';
+	import OsPage from '$lib/OSPage.svelte';
+import Runes from '$lib/Runes.svelte';
 	import { onMount } from "svelte";
 
+    type App = 'aboutMe' | 'experience' | 'resume' | 'none'
+
     let TomSay: string = $state("")
+    let app: App = $state('none')
     const deleteSpeed: number = 50 //ms
     let timeouts: number[] = []
 
@@ -41,14 +45,11 @@
             insertTomSay("Welcome!")
         }, 1000))
         timeouts.push(setTimeout(() => {
-            insertTomSay("I'm Tommathy, your personal assistant.")
-        }, 5000))
-        timeouts.push(setTimeout(() => {
-            insertTomSay("Feel free to explore.")
-        }, 10000))
+            insertTomSay("Double click the apps!")
+        }, 3000))
         timeouts.push(setTimeout(() => {
             removeTimeouts()
-        }, 14000))
+        }, 7000))
     })
 </script>
 
@@ -63,24 +64,31 @@
     <div class="TomShadow"></div>
     <div class="w-full h-full flex flex-col absolute">
         <div id="apps" class="w-full grow p-7 gap-2 flex flex-col ">
-            <button class=" w-32 h-32 gap-2 flex flex-col flex-none items-center justify-center">
+            <button class=" w-32 h-32 gap-2 flex flex-col flex-none items-center justify-center" ondblclick={() => app = 'aboutMe'}>
                 <img src="AboutMe.svg" alt="About me icon" width="64px">
-                <label for="About Me">Personal Interests</label>
+                <label for="About Me">About Me</label>
             </button>
-            <button class=" w-32 h-32 gap-2 flex flex-col flex-none items-center justify-center">
+            <button class=" w-32 h-32 gap-2 flex flex-col flex-none items-center justify-center" ondblclick={() => app = 'experience'}>
                 <img src="Experience.svg" alt="Experience icon" width="64px">
                 <label for="Experience">Experience</label>
             </button>
-            <button class=" w-32 h-32 gap-2 flex flex-col flex-none items-center justify-center">
+            <button class=" w-32 h-32 gap-2 flex flex-col flex-none items-center justify-center" ondblclick={() => app = 'resume'}>
                 <img src="Resume.svg" alt="Resume icon" width="64px">
-                <label for="Resume">Resume .pdf</label>
+                <label for="Resume">Resume<br/>.pdf</label>
             </button>
         </div>
         <button class=" w-32 h-32 gap-2 flex flex-col flex-none items-center justify-center absolute right-7 top-7">
             <img src="WIP.svg" alt="Work in Progress icon" width="64px">
             <label for="WIP">WIP</label>
         </button>
-        <div id="toolbar" class="w-full h-12 bg-black"></div>
+        {#if app === 'aboutMe'}
+            <OsPage {app} closePage={() => app = 'none'} />
+        {:else if app === 'experience'}
+            <OsPage {app} closePage={() => app = 'none'} />
+        {:else if app === 'resume'}
+            <OsPage {app} closePage={() => app = 'none'} />
+        {/if}
+        <div id="toolbar" class="w-full h-12 bg-black z-20"></div>
     </div>
 
 </div>
@@ -93,6 +101,14 @@
         font-weight: 400;
         font-size: 0.8em;
         font-style: normal;
+    }
+
+    button:hover{
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    button{
+        border-radius: 10px;
     }
 
     .TomBody{

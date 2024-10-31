@@ -44,8 +44,6 @@ onMount(() => {
     generateRunes()
 })
 
-$inspect(runes)
-
 </script>
 
 <div class="w-full h-full absolute pointer-events-none opacity-20">
