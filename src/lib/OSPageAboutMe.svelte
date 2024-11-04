@@ -53,25 +53,4 @@
         font-weight: 800;
     }
 
-        /* width */
-        .page-content::-webkit-scrollbar {
-        width: 15px;
-    }
-
-    /* Track */
-    .page-content::-webkit-scrollbar-track {
-        background: transparent
-    }
-
-    /* Handle */
-    .page-content::-webkit-scrollbar-thumb {
-        background-color: #aaaaaa2f;
-        border-radius: 10px;
-        transition: background-color 2s;
-    }
-
-    /* Handle on hover */
-    .page-content::-webkit-scrollbar-thumb:hover {
-        background-color: #7a7a7aab;
-    }
 </style>
