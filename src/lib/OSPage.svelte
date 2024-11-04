@@ -16,7 +16,7 @@
             X
         </button>
     </div>
-    <div class="text-white overflow-auto">
+    <div class="text-white overflow-auto page-content">
         {#if app === 'aboutMe'}
         <OsPageAboutMe />
         {:else if app === 'experience'}
@@ -40,24 +40,24 @@
     }
 
     /* width */
-    ::-webkit-scrollbar {
+    .page-content::-webkit-scrollbar {
         width: 15px;
     }
 
     /* Track */
-    ::-webkit-scrollbar-track {
+    .page-content::-webkit-scrollbar-track {
         background: transparent
     }
 
     /* Handle */
-    ::-webkit-scrollbar-thumb {
+    .page-content::-webkit-scrollbar-thumb {
         background-color: #aaaaaa2f;
         border-radius: 10px;
         transition: background-color 2s;
     }
 
     /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
+    .page-content::-webkit-scrollbar-thumb:hover {
         background-color: #7a7a7aab;
     }
 </style>

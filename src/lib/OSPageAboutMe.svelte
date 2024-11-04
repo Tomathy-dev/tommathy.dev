@@ -1,4 +1,4 @@
-<div class="w-full text-[wheat] flex justify-center items-center p-2 flex-col overflow-auto">
+<div class="w-full text-[wheat] flex justify-center items-center p-2 flex-col overflow-auto page-content">
     <header class="w-full flex justify-center items-center p-2">
         <div class="flex justify-center items-center border-b-2 border-[wheat] w-[90%]">
             About Me
@@ -51,5 +51,27 @@
         font-family: 'Panchang', sans-serif;
         font-size: 4em;
         font-weight: 800;
+    }
+
+        /* width */
+        .page-content::-webkit-scrollbar {
+        width: 15px;
+    }
+
+    /* Track */
+    .page-content::-webkit-scrollbar-track {
+        background: transparent
+    }
+
+    /* Handle */
+    .page-content::-webkit-scrollbar-thumb {
+        background-color: #aaaaaa2f;
+        border-radius: 10px;
+        transition: background-color 2s;
+    }
+
+    /* Handle on hover */
+    .page-content::-webkit-scrollbar-thumb:hover {
+        background-color: #7a7a7aab;
     }
 </style>
